@@ -1,0 +1,10 @@
+# for frontend
+/frontend/node_modules
+
+
+
+
+# for Backend
+/backend/venv
+/backend/__pycache__
+/backend/sql_app.db
