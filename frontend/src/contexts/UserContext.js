@@ -8,7 +8,7 @@ const UserContext = createContext();
 
 const UserProvider = (props) => {
     const [token, setToken] = useState(localStorage.getItem("userToken"));
-    const [userDetails, setUserDetils] = useState(null);
+    const [userDetails, setUserDetails] = useState(null);
     useEffect(() => {
         const fetchUser = async () => {
             const requestOptions = {
@@ -20,22 +20,25 @@ const UserProvider = (props) => {
             };
 
             const response = await fetch("/api/users/me", requestOptions);
-            
+
             if (!response.ok) {
                 setToken(null);
             }
-            if (response.ok){
+            if (response.ok) {
                 const data = await response.json()
                 console.log(data)
-                setUserDetils(data)
+                setUserDetails(data)
+                localStorage.setItem("userToken", token);
             }
-            localStorage.setItem("userToken", token);
+
         };
-        fetchUser();
+        if (token) {
+            fetchUser();
+        }
     }, [token]);
 
     return (
-        <UserContext.Provider value={{ token, setToken, userDetails, setUserDetils }}>
+        <UserContext.Provider value={{ token, setToken, userDetails, setUserDetails }}>
             {props.children}
         </UserContext.Provider>
     );

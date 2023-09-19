@@ -11,6 +11,9 @@
 h3 {
     text-align: center;
     margin: 0;
+    background: -webkit-linear-gradient(right, #0A5EC4 , #B15798);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     /* margin-bottom: 0; */
 }
 
@@ -42,7 +45,7 @@ input {
     width: 100%;
     text-align: center;
     height: 2.5rem;
-    background-color: #4F9317;
+    background-color: #7cc242;
     border: none;
     border-radius: 5px;
     margin-top: 5px;
@@ -62,17 +65,17 @@ p {
     text-decoration: underline;
 }
 
-.error-message{
-   display: inline-block;
-   font-size: 12px;
-   font-weight:400;
-   margin: 0;
-   /* margin-top: 0;
+.error-message {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0;
+    /* margin-top: 0;
    margin-bottom: 0; */
-   text-align: center;
-   color: red;
+    text-align: center;
+    color: red;
 }
 
-.top-section{
+.top-section {
     text-align: center;
 }

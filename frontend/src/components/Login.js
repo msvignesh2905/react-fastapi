@@ -10,7 +10,7 @@ const initialInputs = {
 const Login = ({ setIsLoginShow }) => {
     const [inputs, setInputs] = useState(initialInputs)
     const [errorMessage, setErrorMessage] = useState('')
-    const {setToken, setUserDetils}= useContext(UserContext)
+    const {setToken, setUserDetails}= useContext(UserContext)
     const handleInputChange = (event) => {
         setErrorMessage("")
         const inputName = event.target.name
@@ -39,7 +39,7 @@ const Login = ({ setIsLoginShow }) => {
             setErrorMessage(data.detail)
         } else {
             setToken(data.access_token)
-            setUserDetils(data.user_details)
+            setUserDetails(data.user_details)
         }
     }
     const handleSubmit = (event) => {
